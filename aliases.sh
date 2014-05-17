@@ -21,3 +21,11 @@ function take {
     mkdir $1
     cd $1
 }
+
+# This is because OSX is insanely buggy and disconnecting audio outputs
+# unexpectedly can result in the sound completley failing.
+function nuke-sound {
+    sudo kextunload /System/Library/Extensions/AppleHDA.kext
+    sudo kextload /System/Library/Extensions/AppleHDA.kext
+    #ps aux | grep 'coreaudio[a-z]' | awk '{print $2}' | xargs sudo kill
+}
