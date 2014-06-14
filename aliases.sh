@@ -29,3 +29,11 @@ function nuke-sound {
     sudo kextload /System/Library/Extensions/AppleHDA.kext
     #ps aux | grep 'coreaudio[a-z]' | awk '{print $2}' | xargs sudo kill
 }
+
+function did {
+    echo `date +%s`: $1 >> ~/.done
+}
+
+function proj {
+    cd $(find ~/workspace -maxdepth 1 -type d | percol)
+}
