@@ -1,6 +1,10 @@
 export PS1="\w > "
-export PATH="~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/heroku/bin:/usr/local/opt/ruby/bin:$PATH"
-export EDITOR="emacs -nw"
+export PATH="~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/heroku/bin:/usr/local/opt/ruby/bin:~/.cabal/bin:$PATH"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/sbin:$PATH
+
+export EDITOR="emacsclient -t"
 
 # Typing name of dir (including ., ..) will cd to it.
 shopt -s autocd
